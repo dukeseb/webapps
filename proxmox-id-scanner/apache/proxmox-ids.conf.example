@@ -1,0 +1,24 @@
+# Example Apache vhost for Proxmox ID Scanner.
+#
+# Copy to /etc/apache2/sites-available/proxmox-ids.conf, adjust the path and
+# ServerName, then:
+#   a2ensite proxmox-ids.conf
+#   systemctl reload apache2
+#
+# Requires mod_php (or proxy to php-fpm) and PHP 8.1+ with curl/json/sodium.
+
+<VirtualHost *:80>
+    ServerName proxmox-ids.example.com
+    DocumentRoot /var/www/proxmox-ids
+
+    ErrorLog ${APACHE_LOG_DIR}/proxmox-ids-error.log
+    CustomLog ${APACHE_LOG_DIR}/proxmox-ids-access.log combined
+</VirtualHost>
+
+# To serve this on its own port instead of a domain (e.g. for a LAN-only
+# tool), add "Listen 8081" to ports.conf and use:
+#
+# <VirtualHost *:8081>
+#     ServerName proxmox-ids
+#     DocumentRoot /var/www/proxmox-ids
+# </VirtualHost>

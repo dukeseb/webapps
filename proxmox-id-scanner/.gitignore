@@ -1,0 +1,7 @@
+# Editor/tooling artifacts
+.claude/
+.vscode/
+.idea/
+
+# This app's config, credentials, and secret key live outside the web root
+# (see README) so there is nothing app-specific to ignore here.
