@@ -5,6 +5,8 @@ servers and clusters — standalone hosts and clusters alike — in one
 dashboard, so you're not left guessing (or colliding) the next time you spin
 something up.
 
+![Proxmox ID Scanner dashboard](docs/screenshot.webp)
+
 ## Features
 
 - Aggregates VMs/containers from every configured Proxmox host or cluster
@@ -31,13 +33,9 @@ something up.
 
 ## Installation
 
-This app lives in the `proxmox-id-scanner` folder of the [webapps](https://github.com/dukeseb/webapps)
-repo. Either clone the whole repo and point your web server's document root
-at the subfolder, or sparse-checkout just this app:
-
 ```bash
-git clone https://github.com/dukeseb/webapps.git
-cd webapps/proxmox-id-scanner
+git clone https://github.com/<you>/proxmox-ids-scanner.git /var/www/proxmox-ids
+cd /var/www/proxmox-ids
 sudo ./setup.sh
 ```
 
